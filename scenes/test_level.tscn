@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+[gd_scene format=3 uid="uid://ci0leflr1hcqc"]
+
+[node name="TestLevel" type="Node2D"]
+=======
 [gd_scene load_steps=4 format=3 uid="uid://ci0leflr1hcqc"]
 
 [ext_resource type="Texture2D" uid="uid://cav3aoalxsxr1" path="res://icon.svg" id="1_2venv"]
@@ -26,3 +31,4 @@ texture = ExtResource("1_2venv")
 shape = SubResource("RectangleShape2D_2venv")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+>>>>>>> 59252711a22df812d0aabe4dada203abf4ef70b0
