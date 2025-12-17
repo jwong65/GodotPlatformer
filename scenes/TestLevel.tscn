@@ -77,3 +77,4 @@ shape = SubResource("RectangleShape2D_1fpmp")
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_i6x8u")
 format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 1342177282, 0, 131072, 1610612738)
