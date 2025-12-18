@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
 @export var GRAVITY := 1200.0
@@ -20,5 +20,11 @@ func _physics_process(delta: float) -> void:
 	# Horizontal movement
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
+	
+	if direction != 0:
+		sprite.flip_h = direction < 0  # True if moving left, false if right
+	if direction == 0 and is_on_floor():
+		if sprite.animation != "idle":
+			sprite.play("idle")
 
 	move_and_slide()

@@ -825,7 +825,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -851,3 +851,5 @@ position = Vector2(-1, 2)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ama2g")
 animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.6606532
