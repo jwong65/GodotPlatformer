@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc135q0vlyssh"]
+[gd_scene load_steps=6 format=3 uid="uid://dc135q0vlyssh"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="1_dojpo"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="2_1fpmp"]
+[ext_resource type="Script" uid="uid://d0o8s34o6faid" path="res://player/player.gd" id="2_df0lk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fpmp"]
 size = Vector2(600, 50)
@@ -21,13 +22,13 @@ shape = SubResource("RectangleShape2D_1fpmp")
 [node name="Player" parent="." instance=ExtResource("1_dojpo")]
 position = Vector2(19.999998, -34.999996)
 scale = Vector2(5, 5)
+script = ExtResource("2_df0lk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 position = Vector2(1.4000003, 1.1999991)
 shape = SubResource("CapsuleShape2D_1fpmp")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 scale = Vector2(0.25, 0.25)
 tile_set = ExtResource("2_1fpmp")
 format = 2
