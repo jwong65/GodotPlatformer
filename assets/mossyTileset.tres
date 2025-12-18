@@ -1,13 +1,15 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://2tg6kjnxtnno"]
 
-[ext_resource type="Texture2D" uid="uid://dg37hba4ep020" path="res://assets/Mossy Tileset/Mossy - TileSet.png" id="1_iw3y2"]
+[ext_resource type="Texture2D" uid="uid://dg37hba4ep020" path="res://assets/Mossy Tileset/Mossy - TileSet.png" id="1_u0lo5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df0lk"]
-texture = ExtResource("1_iw3y2")
+texture = ExtResource("1_u0lo5")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -194.59723, 256, -200.15714, 256, 233.5166, -256, 256)
 1:0/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -194.59723, 205.71704, -205.71704, 200.1571, 256, -256, 256)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -57,4 +59,5 @@ texture_region_size = Vector2i(512, 512)
 
 [resource]
 tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_df0lk")
