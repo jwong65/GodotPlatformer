@@ -7,6 +7,10 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
+		if velocity.y < 0:
+			sprite.animation = "JumpUp"
+		else: 
+			sprite.animation = "JumpDown"
 #		This basically means falling faster every frame for gravity. Delta is time since last frame
 		velocity.y += GRAVITY * delta
 	else:
