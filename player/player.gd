@@ -23,8 +23,14 @@ func _physics_process(delta: float) -> void:
 	
 	if direction != 0:
 		sprite.flip_h = direction < 0  # True if moving left, false if right
-	if direction == 0 and is_on_floor():
-		if sprite.animation != "Idle":
-			sprite.play("Idle")
+		
+	if is_on_floor():
+		if direction == 0:
+			if sprite.animation != "Idle":
+				sprite.play("Idle")
+		else:
+			if sprite.animation != "Walk":
+				sprite.play("Walk")
+
 
 	move_and_slide()
