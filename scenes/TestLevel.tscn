@@ -34,7 +34,7 @@ shape = SubResource("CapsuleShape2D_1fpmp")
 scale = Vector2(0.25, 0.25)
 tile_set = ExtResource("2_1fpmp")
 format = 2
-layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 131072, 1, 2, 196608, 0, 65538, 196608, 1, 131073, 65536, 0, 131072, 262144, 1610612736, 131074, 262144, 805306368)
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 131072, 1, 2, 196608, 0, 65538, 196608, 1, 131073, 65536, 0, 131072, 262144, 1610612736, 131074, 262144, 805306368, 65534, 65536, 1, 65533, 65536, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

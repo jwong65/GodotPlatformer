@@ -895,6 +895,11 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -911,5 +916,5 @@ position = Vector2(-1, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ama2g")
-animation = &"Idle"
+animation = &"new_animation"
 autoplay = "Idle"
