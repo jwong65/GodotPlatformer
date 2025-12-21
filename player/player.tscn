@@ -926,7 +926,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvji8")
 }],
-"loop": false,
+"loop": true,
 "name": &"JumpDown",
 "speed": 5.0
 }, {
@@ -997,9 +997,6 @@ scale = Vector2(16, 16)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_oul6g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

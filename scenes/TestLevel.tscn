@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc135q0vlyssh"]
+[gd_scene load_steps=7 format=3 uid="uid://dc135q0vlyssh"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="1_dojpo"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="2_1fpmp"]
 [ext_resource type="Script" uid="uid://d0o8s34o6faid" path="res://player/player.gd" id="2_df0lk"]
-[ext_resource type="Script" uid="uid://bjitirge83lvb" path="res://enemies/new_script.gd" id="4_8xg12"]
-[ext_resource type="Texture2D" uid="uid://cav3aoalxsxr1" path="res://icon.svg" id="5_5n3yh"]
+[ext_resource type="PackedScene" uid="uid://b8pbyoedpte4" path="res://enemies/enemy.tscn" id="4_i6x8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fpmp"]
 size = Vector2(600, 50)
@@ -14,11 +13,14 @@ radius = 6.0
 height = 19.599998
 
 [node name="TestLevel" type="Node2D"]
+position = Vector2(-24, -3)
 
 [node name="Ground" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(651, 700)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_1fpmp")
 
 [node name="Player" parent="." instance=ExtResource("1_dojpo")]
@@ -39,9 +41,7 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 131072, 1
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
-script = ExtResource("4_8xg12")
+[node name="Enemy" parent="." instance=ExtResource("4_i6x8u")]
+script = null
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(325, -42)
-texture = ExtResource("5_5n3yh")
+[editable path="Player"]
