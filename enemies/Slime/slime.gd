@@ -27,7 +27,12 @@ func handle_animation():
 		animatedSprite.play("idle")
 	else:
 		animatedSprite.play("walk")
-		animatedSprite.flip_h = velocity.x > 0
+#		So if the direction is negative it will flip otherwise it won't.
+		if dir.x == -1:
+			animatedSprite.flip_h = false
+		elif dir.x == 1:
+			animatedSprite.flip_h = true
+			
 
 func _on_timer_timeout():
 	$Timer.wait_time = choose([1.0, 1.5, 2.0])
