@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const speed = 100
+@export var GRAVITY := 1200.0
 #Direction
 var dir: Vector2
 
@@ -12,10 +13,17 @@ func _ready():
 	$Timer.start()
 	
 func _physics_process(delta):
+	if !is_on_floor():
+		velocity.y+=GRAVITY*delta
+	else:
+		velocity.y = 0
+#	Moves towards player
 	if slime_chase:
 		player=Global.playerBody
-		velocity = position.direction_to(player.position) * speed
-		dir.x = abs(velocity.x)/ velocity.x 
+#		This will get the left right direction properly with sign giving us positive or negative
+#		This is important because left is negative, not moving is 0 and right is positive.
+		velocity.x = sign(player.position.x - position.x) * speed
+		dir.x = sign(velocity.x)
 	elif !slime_chase:
 		velocity.x = dir.x * speed
 	handle_animation()
@@ -40,7 +48,8 @@ func handle_animation():
 			
 
 func _on_timer_timeout():
-	$Timer.wait_time = choose([1.0, 1.5, 2.0])
+#	This timer will show that how often the directions will change and choosing the direction
+	$Timer.wait_time = choose([1.0, 2.0])
 	if !slime_chase:
 #		So this will change the direction of the slime, between right, left and none.
 		dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.ZERO])
