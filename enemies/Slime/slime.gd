@@ -8,13 +8,14 @@ var slime_chase: bool
 var player: CharacterBody2D
 
 func _ready():
-	slime_chase = false
+	slime_chase = true
 	$Timer.start()
 	
 func _physics_process(delta):
 	if slime_chase:
 		player=Global.playerBody
 		velocity = position.direction_to(player.position) * speed
+		dir.x = abs(velocity.x)/ velocity.x 
 	elif !slime_chase:
 		velocity.x = dir.x * speed
 	handle_animation()
@@ -43,4 +44,3 @@ func _on_timer_timeout():
 	if !slime_chase:
 #		So this will change the direction of the slime, between right, left and none.
 		dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.ZERO])
-		print(dir) 	
