@@ -42,6 +42,7 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 131072, 1
 zoom = Vector2(3, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("4_i6x8u")]
+position = Vector2(-551, 0)
 script = null
 
 [editable path="Player"]
