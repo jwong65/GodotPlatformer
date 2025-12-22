@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const speed = 100
 @export var GRAVITY := 1200.0
+@export var CHASE_RANGE := 100
 #Direction
 var dir: Vector2
 
@@ -9,14 +10,20 @@ var slime_chase: bool
 var player: CharacterBody2D
 
 func _ready():
-	slime_chase = true
+	slime_chase = false
 	$Timer.start()
 	
 func _physics_process(delta):
+#	Gravity
 	if !is_on_floor():
 		velocity.y+=GRAVITY*delta
 	else:
 		velocity.y = 0
+#		SO the slime will chase after the player if they're within the chase range. This should change to chase after being attacked.
+	if Global.playerBody !=null:
+		var distance = position.distance_to(Global.playerBody.position)
+		slime_chase = distance <=CHASE_RANGE
+		
 #	Moves towards player
 	if slime_chase:
 		player=Global.playerBody
