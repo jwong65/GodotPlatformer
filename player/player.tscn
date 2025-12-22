@@ -1,6 +1,5 @@
-[gd_scene load_steps=141 format=3 uid="uid://pbmoqjvodepq"]
+[gd_scene load_steps=140 format=3 uid="uid://pbmoqjvodepq"]
 
-[ext_resource type="Texture2D" uid="uid://cav3aoalxsxr1" path="res://icon.svg" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dfphgm6ovgi84" path="res://player/SPRITE_SHEET.png" id="2_rkbax"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
@@ -991,16 +990,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
-radius = 5.4375
-height = 20.125
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
+radius = 5.1875
+height = 24.125
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_oul6g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -1010,5 +1005,6 @@ animation = &"JumpDown"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.1875, -0.9375)
-shape = SubResource("CapsuleShape2D_rkbax")
+position = Vector2(1.8125, -1.125)
+rotation = 3.1415927
+shape = SubResource("CapsuleShape2D_oul6g")
