@@ -5,13 +5,17 @@ const speed = 100
 var dir: Vector2
 
 var slime_chase: bool
+var player: CharacterBody2D
 
 func _ready():
 	slime_chase = false
 	$Timer.start()
 	
 func _physics_process(delta):
-	if !slime_chase:
+	if slime_chase:
+		player=Global.playerBody
+		velocity = position.direction_to(player.position) * speed
+	elif !slime_chase:
 		velocity.x = dir.x * speed
 	handle_animation()
 	move_and_slide()

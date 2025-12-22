@@ -4,6 +4,10 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var GRAVITY := 1200.0
 
+#This is the ready function that is initalized at the start.
+func _ready() -> void:
+	Global.playerBody = self
+
 func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
