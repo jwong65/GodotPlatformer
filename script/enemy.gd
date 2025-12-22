@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name enemySlime	
 
 const speed = 100.0
-var slime_chase = false
+var slime_chase:bool
 const GRAVITY := 1200.0
 
 @export var health = 3
@@ -16,7 +16,7 @@ var takingDamage : bool = false
 
 var dir:Vector2 = Vector2.ZERO
 @export var knockback_force = 200
-var is_roaming: bool = false	
+var is_roaming: bool	
 
 func _process(delta: float): 
 	if !is_on_floor():

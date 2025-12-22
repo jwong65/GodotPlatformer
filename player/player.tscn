@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://pbmoqjvodepq"]
+[gd_scene load_steps=141 format=3 uid="uid://pbmoqjvodepq"]
 
 [ext_resource type="Texture2D" uid="uid://cav3aoalxsxr1" path="res://icon.svg" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dfphgm6ovgi84" path="res://player/SPRITE_SHEET.png" id="2_rkbax"]
@@ -991,6 +991,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
+radius = 5.4375
+height = 20.125
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 
@@ -1004,3 +1008,7 @@ texture = ExtResource("1_oul6g")
 sprite_frames = SubResource("SpriteFrames_ama2g")
 animation = &"JumpDown"
 autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.1875, -0.9375)
+shape = SubResource("CapsuleShape2D_rkbax")
