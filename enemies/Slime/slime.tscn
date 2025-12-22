@@ -186,9 +186,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_au0y3"]
-radius = 25.0
-height = 80.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5tkm"]
+radius = 24.0
+height = 96.0
 
 [node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_s5tkm")
@@ -198,13 +198,12 @@ position = Vector2(1, -1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_au0y3")
 animation = &"idle"
-frame = 2
-frame_progress = 0.6939916
+frame_progress = 0.43212447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 18)
+position = Vector2(4, 19)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_au0y3")
+shape = SubResource("CapsuleShape2D_s5tkm")
 
 [node name="Timer" type="Timer" parent="."]
 
