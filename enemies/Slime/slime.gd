@@ -1,8 +1,14 @@
 extends CharacterBody2D
 
+#Different states for the enemy
+enum SlimeState { NORMAL, HURT }
+var state : SlimeState = SlimeState.NORMAL
+var hurt_timer : float = 0.2
+
 const speed = 100
 @export var GRAVITY := 1200.0
 @export var CHASE_RANGE := 100
+@export var HEALTH := 3
 #Direction
 var dir: Vector2
 
@@ -12,18 +18,19 @@ var player: CharacterBody2D
 func _ready():
 	slime_chase = false
 	$Timer.start()
-	
+
 func _physics_process(delta):
 #	Gravity
 	if !is_on_floor():
 		velocity.y+=GRAVITY*delta
 	else:
 		velocity.y = 0
-#		SO the slime will chase after the player if they're within the chase range. This should change to chase after being attacked.
+
+#	SO the slime will chase after the player if they're within the chase range. This should change to chase after being attacked.
 	if Global.playerBody !=null:
 		var distance = position.distance_to(Global.playerBody.position)
 		slime_chase = distance <=CHASE_RANGE
-		
+	
 #	Moves towards player
 	if slime_chase:
 		player=Global.playerBody
@@ -31,7 +38,7 @@ func _physics_process(delta):
 #		This is important because left is negative, not moving is 0 and right is positive.
 		velocity.x = sign(player.position.x - position.x) * speed
 		dir.x = sign(velocity.x)
-	elif !slime_chase:
+	else:
 		velocity.x = dir.x * speed
 	handle_animation()
 	move_and_slide()
@@ -42,6 +49,9 @@ func choose(array):
 	
 func handle_animation():
 	var animatedSprite = $AnimatedSprite2D
+	if state == SlimeState.HURT:
+		animatedSprite.play('hurt')
+		return
 #	So if velocity is 0 then we'll play idle
 	if velocity.x == 0:
 		animatedSprite.play("idle")
