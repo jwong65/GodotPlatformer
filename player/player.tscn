@@ -1218,7 +1218,7 @@ shape = SubResource("CapsuleShape2D_oul6g")
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(7.375, 4.25)
+position = Vector2(4.8125, 4.5625)
 shape = SubResource("CircleShape2D_rkbax")
 debug_color = Color(0.91019547, 0.07375816, 0.70288765, 0.41960785)
 

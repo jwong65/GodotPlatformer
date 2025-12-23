@@ -56,12 +56,6 @@ func _physics_process(delta: float) -> void:
 	handlePlayerAnimation(direction)
 	move_and_slide()
 
-
-func _on_attack_hitbox_body_entered(body: Node2D) -> void:
-#	The enemies should be in group->enemies (seen by going to the node and selecting a group)
-	if body.is_in_group("enemies"):
-		body.take_damage(1) 
-
 #This is to disable the attacking hitbox after the animation is finished, also reseting the is_attacking variable
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "Attack":
