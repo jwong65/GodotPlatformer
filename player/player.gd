@@ -14,7 +14,7 @@ func handlePlayerAnimation(direction: float)-> void :
 	if direction != 0:
 		sprite.flip_h = direction <0
 #	Attack animation?
-	if is_attacking = true
+	if is_attacking == true:
 		sprite.play()
 		
 	if not is_on_floor():
@@ -49,3 +49,7 @@ func _physics_process(delta: float) -> void:
 
 	handlePlayerAnimation(direction)
 	move_and_slide()
+
+
+func _on_attack_hitbox_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

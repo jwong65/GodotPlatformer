@@ -1,5 +1,6 @@
-[gd_scene load_steps=167 format=3 uid="uid://pbmoqjvodepq"]
+[gd_scene load_steps=168 format=3 uid="uid://pbmoqjvodepq"]
 
+[ext_resource type="Script" uid="uid://d0o8s34o6faid" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dfphgm6ovgi84" path="res://player/SPRITE_SHEET.png" id="2_rkbax"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oul6g"]
@@ -1195,6 +1196,7 @@ height = 24.125
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+script = ExtResource("1_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -1209,3 +1211,7 @@ frame_progress = 1.0
 position = Vector2(1.8125, -1.125)
 rotation = 3.1415927
 shape = SubResource("CapsuleShape2D_oul6g")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
