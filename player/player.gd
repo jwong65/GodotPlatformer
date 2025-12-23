@@ -7,7 +7,21 @@ extends CharacterBody2D
 #This is the ready function that is initalized at the start.
 func _ready() -> void:
 	Global.playerBody = self
-
+	
+func handlePlayerAnimation(direction: float)-> void :
+	if direction != 0:
+		sprite.flip_h = direction <0
+	if not is_on_floor():
+		if velocity.y < 0:
+			sprite.play("JumpUp")
+		else:
+			sprite.play("JumpDown")
+	if direction == 0:
+		sprite.play("Idle")
+	else:
+		sprite.play("Walk")
+	
+	
 func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
@@ -28,17 +42,6 @@ func _physics_process(delta: float) -> void:
 	# Horizontal movement
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
-	
-	if direction != 0:
-		sprite.flip_h = direction < 0  # True if moving left, false if right
-		
-	if is_on_floor():
-		if direction == 0:
-			if sprite.animation != "Idle":
-				sprite.play("Idle")
-		else:
-			if sprite.animation != "Walk":
-				sprite.play("Walk")
 
-
+	handlePlayerAnimation(direction)
 	move_and_slide()
