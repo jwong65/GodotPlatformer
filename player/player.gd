@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var GRAVITY := 1200.0
 
-var is_attacking:bool = false
-
+var attack_type: String
+var current_attack: bool
 #This is the ready function that is initalized at the start.
 func _ready() -> void:
 	Global.playerBody = self
@@ -14,11 +14,6 @@ func _ready() -> void:
 func handlePlayerAnimation(direction: float)-> void :
 	if direction != 0:
 		sprite.flip_h = direction <0
-		#	Attack animation
-	if is_attacking:
-		sprite.play("Attack")
-		attack_hitbox.disabled = false
-		return  # skip other animations while attacking
 
 	if not is_on_floor():
 		if velocity.y < 0:
@@ -45,9 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	# Attacking
-	if Input.is_action_just_pressed("attack") and !is_attacking:
-		is_attacking= true
+
 
 	# Horizontal movement
 	var direction := Input.get_axis("move_left", "move_right")
@@ -55,14 +48,3 @@ func _physics_process(delta: float) -> void:
 
 	handlePlayerAnimation(direction)
 	move_and_slide()
-
-#This is to disable the attacking hitbox after the animation is finished, also reseting the is_attacking variable
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation == "Attack":
-		attack_hitbox.disabled = true
-		is_attacking = false
-		
-#		This is to make sure the attack is only connecting on these frames. So the attack hitbox is disabled when not between 1 and 5
-func _on_animated_sprite_2d_sprite_frames_changed(frame:int) -> void:
-	if sprite.animation == "Attack":
-		attack_hitbox.disabled = not(frame >=1 and frame<=5)
