@@ -16,6 +16,7 @@ func handlePlayerAnimation(direction: float)-> void :
 			sprite.play("JumpUp")
 		else:
 			sprite.play("JumpDown")
+		return 
 	if direction == 0:
 		sprite.play("Idle")
 	else:
@@ -25,10 +26,6 @@ func handlePlayerAnimation(direction: float)-> void :
 func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
-		if velocity.y < 0:
-			sprite.animation = "JumpUp"
-		else: 
-			sprite.animation = "JumpDown"
 #		This basically means falling faster every frame for gravity. Delta is time since last frame
 		velocity.y += GRAVITY * delta
 	else:
