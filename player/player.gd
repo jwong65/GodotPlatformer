@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var GRAVITY := 1200.0
 
+var is_attacking:bool = false
+
 #This is the ready function that is initalized at the start.
 func _ready() -> void:
 	Global.playerBody = self
@@ -11,12 +13,17 @@ func _ready() -> void:
 func handlePlayerAnimation(direction: float)-> void :
 	if direction != 0:
 		sprite.flip_h = direction <0
+#	Attack animation?
+	if is_attacking = true
+		sprite.play()
+		
 	if not is_on_floor():
 		if velocity.y < 0:
 			sprite.play("JumpUp")
 		else:
 			sprite.play("JumpDown")
 		return 
+
 	if direction == 0:
 		sprite.play("Idle")
 	else:
