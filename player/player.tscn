@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=3 uid="uid://pbmoqjvodepq"]
+[gd_scene load_steps=169 format=3 uid="uid://pbmoqjvodepq"]
 
 [ext_resource type="Script" uid="uid://d0o8s34o6faid" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dfphgm6ovgi84" path="res://player/SPRITE_SHEET.png" id="2_rkbax"]
@@ -1194,6 +1194,9 @@ animations = [{
 radius = 5.1875
 height = 24.125
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 6.6252947
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
 script = ExtResource("1_rkbax")
@@ -1215,6 +1218,10 @@ shape = SubResource("CapsuleShape2D_oul6g")
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(7.375, 4.25)
+shape = SubResource("CircleShape2D_rkbax")
+debug_color = Color(0.91019547, 0.07375816, 0.70288765, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]

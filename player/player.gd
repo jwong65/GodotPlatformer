@@ -67,3 +67,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "Attack":
 		attack_hitbox.disabled = true
 		is_attacking = false
+		
+#		This is to make sure the attack is only connecting on these frames. So the attack hitbox is disabled when not between 1 and 5
+func _on_animated_sprite_2d_sprite_frames_changed(frame:int) -> void:
+	if sprite.animation == "Attack":
+		attack_hitbox.disabled = not(frame >=1 and frame<=5)
