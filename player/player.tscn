@@ -681,7 +681,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 8.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1195,7 +1195,7 @@ radius = 5.1875
 height = 24.125
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
-radius = 6.6252947
+radius = 10.128086
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
@@ -1218,7 +1218,7 @@ shape = SubResource("CapsuleShape2D_oul6g")
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(4.8125, 4.5625)
+position = Vector2(1.1875, 4.625)
 shape = SubResource("CircleShape2D_rkbax")
 debug_color = Color(0.91019547, 0.07375816, 0.70288765, 0.41960785)
 
