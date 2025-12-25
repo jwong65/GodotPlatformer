@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const speed = 100
 @export var GRAVITY := 1200.0
-@export var CHASE_RANGE := 100
+@export var CHASE_RANGE := 1000
 @export var HEALTH := 3
 #Direction
 var dir: Vector2
