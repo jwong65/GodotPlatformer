@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc135q0vlyssh"]
+[gd_scene load_steps=5 format=3 uid="uid://cu3p767t7uumr"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="1_dojpo"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="2_1fpmp"]
