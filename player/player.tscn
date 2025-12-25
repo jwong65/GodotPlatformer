@@ -1199,6 +1199,7 @@ radius = 10.128086
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
+collision_layer = 2
 script = ExtResource("1_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
