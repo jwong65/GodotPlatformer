@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu3p767t7uumr"]
+[gd_scene load_steps=7 format=3 uid="uid://cu3p767t7uumr"]
 
 [ext_resource type="Script" uid="uid://dai3m6750b4fx" path="res://scenes/world/world.gd" id="1_6a62e"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="2_o63kc"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="3_autyx"]
 [ext_resource type="PackedScene" uid="uid://0cexqe5vn2ct" path="res://enemies/Slime/slime.tscn" id="4_3iuaf"]
 [ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="5_o63kc"]
+[ext_resource type="Texture2D" uid="uid://wxj6gg8qs70n" path="res://scenes/world/Space Background.png" id="6_autyx"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_6a62e")
@@ -44,5 +45,11 @@ polygon = PackedVector2Array(-837, -159, -844, 145, -128, 139, -128, -173, -48, 
 
 [node name="Coin2" parent="." instance=ExtResource("5_o63kc")]
 position = Vector2(-600, -69)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-390.00003, -268)
+scale = Vector2(12, 12)
+texture = ExtResource("6_autyx")
 
 [editable path="Player"]
