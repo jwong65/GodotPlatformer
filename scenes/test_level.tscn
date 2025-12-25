@@ -22,7 +22,7 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAEAAAAAGACAAAAAAADAAAAAAACAAEAAAAEAAAAADD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD4/wAAAAABAAEAAAD2/wAAAAABAAEAAAD3/wAAAAABAAEAAAABAAEAAAABAAAAAAA=")
 tile_set = ExtResource("3_qcd3b")
 
-[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+[node name="Layer2" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_set = ExtResource("3_qcd3b")
 

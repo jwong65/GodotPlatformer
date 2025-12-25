@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite	: AnimatedSprite2D = $AnimatedSprite2D
 #@onready var attack_hitbox: CollisionShape2D =$AttackHitbox/CollisionShape2D
 @export var SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
