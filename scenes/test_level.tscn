@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=4 uid="uid://ci0leflr1hcqc"]
 
-[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_x4b8f"]
+[ext_resource type="Script" uid="uid://dai3m6750b4fx" path="res://scenes/world/world.gd" id="1_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="2_tmr53"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="3_qcd3b"]
 [ext_resource type="PackedScene" uid="uid://0cexqe5vn2ct" path="res://enemies/Slime/slime.tscn" id="4_88ety"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel2" type="Node2D"]
 script = ExtResource("1_x4b8f")
 
 [node name="Player" parent="." instance=ExtResource("2_tmr53")]
@@ -17,9 +17,13 @@ scale = Vector2(0.25, 0.25)
 tile_set = ExtResource("3_qcd3b")
 format = 2
 
-[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAEAAAAAGACAAAAAAADAAAAAAACAAEAAAAEAAAAADD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD4/wAAAAABAAEAAAD2/wAAAAABAAEAAAD3/wAAAAABAAEAAAABAAEAAAABAAAAAAA=")
+tile_set = ExtResource("3_qcd3b")
+
+[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
 tile_set = ExtResource("3_qcd3b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
