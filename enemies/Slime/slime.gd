@@ -1,10 +1,5 @@
 extends CharacterBody2D
 
-#Different states for the enemy
-enum SlimeState { NORMAL, HURT }
-var state : SlimeState = SlimeState.NORMAL
-var hurt_timer : float = 0.2
-
 const speed = 100
 @export var GRAVITY := 1200.0
 @export var CHASE_RANGE := 1000
@@ -49,9 +44,7 @@ func choose(array):
 	
 func handle_animation():
 	var animatedSprite = $AnimatedSprite2D
-	if state == SlimeState.HURT:
-		animatedSprite.play('hurt')
-		return
+
 #	So if velocity is 0 then we'll play idle
 	if velocity.x == 0:
 		animatedSprite.play("idle")

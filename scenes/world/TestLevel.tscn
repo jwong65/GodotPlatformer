@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc135q0vlyssh"]
+[gd_scene load_steps=5 format=3 uid="uid://cu3p767t7uumr"]
 
 [ext_resource type="Script" uid="uid://dai3m6750b4fx" path="res://scenes/world/world.gd" id="1_6a62e"]
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="2_o63kc"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://scenes/coin.tscn" id="5_o63kc"]
 
 [node name="TestLevel" type="Node2D"]
-position = Vector2(-24, -3)
 script = ExtResource("1_6a62e")
 
 [node name="Coin" parent="." instance=ExtResource("5_o63kc")]
@@ -16,6 +15,7 @@ position = Vector2(-744, -69)
 [node name="Player" parent="." instance=ExtResource("2_o63kc")]
 position = Vector2(19.999998, -34.999996)
 scale = Vector2(5, 5)
+GRAVITY = 750.0
 
 [node name="CollisionShape2D" parent="Player" index="2"]
 position = Vector2(1.0000005, 1.1999991)
@@ -24,7 +24,7 @@ position = Vector2(1.0000005, 1.1999991)
 scale = Vector2(0.25, 0.25)
 tile_set = ExtResource("3_autyx")
 format = 2
-layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 131072, 1, 2, 196608, 0, 65538, 196608, 1, 131073, 65536, 0, 131072, 262144, 1610612736, 131074, 262144, 805306368, 65534, 65536, 1, 65533, 65536, 1, 65532, 65536, 1, 65531, 65536, 1, 65530, 65536, 1, 65529, 65536, 1, 65528, 65536, 1, 65526, 65536, 1, 65527, 65536, 1)
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 262144, 1610612736, 2, 196608, 0, 65538, 262144, 805306368, 65534, 65536, 1, 65533, 65536, 1, 65532, 65536, 1, 65531, 65536, 1, 65530, 65536, 1, 65529, 65536, 1, 65528, 65536, 1, 65526, 65536, 1, 65527, 65536, 1, 65537, 65536, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
