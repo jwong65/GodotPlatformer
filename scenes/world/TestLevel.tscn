@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="2_o63kc"]
 [ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="3_autyx"]
 [ext_resource type="PackedScene" uid="uid://0cexqe5vn2ct" path="res://enemies/Slime/slime.tscn" id="4_3iuaf"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="5_o63kc"]
+[ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://scenes/coin.tscn" id="5_o63kc"]
 [ext_resource type="Texture2D" uid="uid://wxj6gg8qs70n" path="res://scenes/world/Space Background.png" id="6_autyx"]
 
 [node name="TestLevel" type="Node2D"]
