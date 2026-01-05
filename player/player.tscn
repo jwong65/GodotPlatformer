@@ -1192,7 +1192,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
 radius = 5.1875
-height = 24.125
+height = 18.5
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(16, 16)
@@ -1203,13 +1203,11 @@ script = ExtResource("1_rkbax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ama2g")
-animation = &"Attack"
+animation = &"Walk"
 autoplay = "Idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.8125, -1.125)
+position = Vector2(1, 1.875)
 rotation = 3.1415927
 shape = SubResource("CapsuleShape2D_oul6g")
 

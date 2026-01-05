@@ -1,8 +1,9 @@
 extends CenterContainer
-
+@onready var start_game_button = %StartGame
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_game_button.grab_focus()
 	pass # Replace with function body.
 
 
