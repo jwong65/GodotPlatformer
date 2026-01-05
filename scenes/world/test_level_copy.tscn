@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu3p767t7uumr"]
+[gd_scene load_steps=6 format=3 uid="uid://b0r0hkuvda12i"]
 
-[ext_resource type="Script" uid="uid://dai3m6750b4fx" path="res://scenes/world/world.gd" id="1_6a62e"]
-[ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="2_o63kc"]
-[ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="3_autyx"]
-[ext_resource type="PackedScene" uid="uid://0cexqe5vn2ct" path="res://enemies/Slime/slime.tscn" id="4_3iuaf"]
-[ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://collectables/Coin/coin.tscn" id="5_o63kc"]
+[ext_resource type="Script" uid="uid://dai3m6750b4fx" path="res://scenes/world/world.gd" id="1_bp03q"]
+[ext_resource type="PackedScene" uid="uid://bqpk47h2u8j1a" path="res://collectables/Coin/coin.tscn" id="2_hp2ji"]
+[ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://player/player.tscn" id="3_qufwt"]
+[ext_resource type="TileSet" uid="uid://2tg6kjnxtnno" path="res://assets/mossyTileset.tres" id="4_2ku74"]
+[ext_resource type="PackedScene" uid="uid://0cexqe5vn2ct" path="res://enemies/Slime/slime.tscn" id="5_3abuw"]
 
 [node name="TestLevel" type="Node2D"]
-script = ExtResource("1_6a62e")
+script = ExtResource("1_bp03q")
 
-[node name="Coin" parent="." instance=ExtResource("5_o63kc")]
+[node name="Coin" parent="." instance=ExtResource("2_hp2ji")]
 position = Vector2(-744, -69)
 
-[node name="Player" parent="." instance=ExtResource("2_o63kc")]
-position = Vector2(19.999998, -34.999996)
+[node name="Player" parent="." instance=ExtResource("3_qufwt")]
+position = Vector2(-500, -75)
 scale = Vector2(5, 5)
 GRAVITY = 750.0
 
@@ -22,14 +22,14 @@ position = Vector2(1.0000005, 1.1999991)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.25, 0.25)
-tile_set = ExtResource("3_autyx")
+tile_set = ExtResource("4_2ku74")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 131072, 0, 65536, 262144, 1610612736, 2, 196608, 0, 65538, 262144, 805306368, 65534, 65536, 1, 65533, 65536, 1, 65532, 65536, 1, 65531, 65536, 1, 65530, 65536, 1, 65529, 65536, 1, 65528, 65536, 1, 65526, 65536, 1, 65527, 65536, 1, 65537, 65536, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Slime" parent="." instance=ExtResource("4_3iuaf")]
+[node name="Slime" parent="." instance=ExtResource("5_3abuw")]
 position = Vector2(-226, -46)
 collision_mask = 3
 
@@ -42,7 +42,7 @@ light_mask = 2
 visibility_layer = 3
 polygon = PackedVector2Array(-837, -159, -844, 145, -128, 139, -128, -173, -48, -173, -48, 219, -917, 211, -919, 210, -926, -167)
 
-[node name="Coin2" parent="." instance=ExtResource("5_o63kc")]
+[node name="Coin2" parent="." instance=ExtResource("2_hp2ji")]
 position = Vector2(-600, -69)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
